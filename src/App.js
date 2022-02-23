@@ -1,13 +1,13 @@
 import "./App.css";
 import Navbar from "./Components/Navbar";
 import TextForm from "./Components/TextForm";
-import About from "./Components/About";
+// import About from "./Components/About";
 import React, { useState } from "react";
 import Alert from "./Components/Alert";
-import Contact from "./Components/Contact";
-import Login from "./Components/Login";
-import Register from "./Components/Register";
-import { Routes, Route } from "react-router-dom";
+// import Contact from "./Components/Contact";
+// import Login from "./Components/Login";
+// import Register from "./Components/Register";
+// import { Routes, Route } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -61,7 +61,12 @@ function App() {
       <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
       <Alert alert={alert} />
       <div className="container my-3">
-        <Routes>
+        <TextForm
+          showAlert={showAlert}
+          heading=" Try TextUtils - Word Counter, Character Counter, Remove Extra Spaces"
+          mode={mode}
+        />
+        {/* <Routes>
           <Route path="/about" element={<About heading="About Text Utils" />} />
           <Route
             path="/"
@@ -98,7 +103,7 @@ function App() {
               />
             }
           />
-        </Routes>
+        </Routes> */}
       </div>
     </>
   );
